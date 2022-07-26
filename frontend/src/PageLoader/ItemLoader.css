@@ -1,0 +1,7 @@
+#itemload {
+    width: 100%;
+    height: 100vh;
+    position: center;
+    background: rgba(0, 0, 0, 0.375);
+    border: none;
+}

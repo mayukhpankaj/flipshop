@@ -1,0 +1,30 @@
+
+.authentication {
+  width: 90%;
+  max-width: 30rem;
+  margin: 7rem auto;
+  text-align: center; 
+  background-color: rgb(241, 241, 241);
+  border-radius: 5%;
+}
+
+label{
+  margin-left:2rem;
+}
+.authentication form {
+  border-style: none;
+  margin-top: 0.1rem;
+}
+
+#name {
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+#email {
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+#password {
+  margin-right: 1rem;
+  border-radius: 10px;
+}

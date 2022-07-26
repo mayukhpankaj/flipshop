@@ -1,0 +1,15 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: auto;
+    margin: auto;
+}
+
+.Header {
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+  
