@@ -22,6 +22,7 @@ const ItemPage = React.lazy(() => import('./Item/itemId'))
 const UserItems = React.lazy(() => import('./Item/userItems'))
 const Form = React.lazy(() => import('./sellingForm/form'))
 const Checkout = React.lazy(() => import('./Checkout/checkout'))
+const Claim = React.lazy(() => import('./Claim/Claim'))
 
 function App () {
   const {
@@ -86,7 +87,15 @@ function App () {
                       <Checkout />
                     </StrictMode>
                   </Route>
+                  )}
+                {(
+                  <Route path='/Claim'>
+                    <StrictMode>
+                      < Claim />
+                    </StrictMode>
+                  </Route>
                 )}
+
               </Suspense>
               <Redirect to='/' />
             </Switch>

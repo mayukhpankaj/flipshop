@@ -1,10 +1,16 @@
 .heart {
   z-index: 20;
   width: 8%;
-  border-color:white;
-  /* margin-left: 18vw; */
-  /* margin-right: -4rem; */
-  margin-bottom: 8vw;
+  border-color:red;
+  
+  position:relative;
+  left: 10%;
+  top: 10%;
+
+  /* margin-right:20%;
+  align-self: flex-end;
+  align-content: flex-end; */
+  /* margin-bottom: 8vw; */
   flex: end;
 }
 

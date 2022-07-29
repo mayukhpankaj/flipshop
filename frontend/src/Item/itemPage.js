@@ -84,7 +84,7 @@ const Page = props => {
           <div className='row'>
             <h2>{props.items.title}</h2>
             <hr />
-            <span>{props.items.lPrice} Szabo(Microether)</span>
+            <span>{props.items.lPrice} Flip Coins</span>
           </div>
           <p>{props.items.description}</p>
           <p>Seller : {props.creator} </p>

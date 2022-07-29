@@ -76,7 +76,7 @@ const Item = props => {
       <ErrorModal error={error} onClear={clearError} />
       {isLoading && <LoadingSpinner/>}
       <li>
-       <div style={{"flex":"wrap"}}>
+       <div style={{"flex":"wrap","marginRight":"10%"}}>
         {
           <img
           src={`${process.env.REACT_APP_BACKEND_URL}/items/image/${props.image}`}
@@ -93,7 +93,7 @@ const Item = props => {
         </div>
         <br />
         <div className='Title'>{props.name}</div>
-        <div className='Price'>{props.lprice} Szabo</div>
+        <div className='Price'>{props.lprice} Flip Coins</div>
         <br />
         <Link to={`${props.id}/item`} style={{ 'text-decoration': 'none' }}>
           <Button>View</Button>
