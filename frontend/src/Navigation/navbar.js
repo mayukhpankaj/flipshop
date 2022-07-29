@@ -4,7 +4,7 @@ import { Fade } from 'reactstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { AuthContext } from '../context/auth'
 import { Link } from 'react-router-dom'
-import Icon from '../icon.png'
+import Icon from '../icon-1.png'
 import Button from '../FormElements/Button'
 import Auth from '../Auth/Auth'
 import '../App.css'
@@ -33,7 +33,7 @@ function Navbar () {
         <div className='leftSide'>
           <div className='links'>
             <Link to='/' style={{ textDecoration: 'none', display: 'inline' }}>
-              <img src={Icon} style={{ height: '60px' }} alt='Ethshop' />
+              Flipshop<img src={Icon} style={{ height: '50px' , 'margin-left':'-0.15em'}} alt='Ethshop' />
             </Link>
           </div>
         </div>

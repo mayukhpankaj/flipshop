@@ -1,0 +1,12 @@
+.Homepageheader{
+    display: flex;
+    justify-content: center;
+    background: #047BD5;
+    padding: 1% 11% 1% 1%;
+    margin-bottom: 1%;
+}
+
+.header_name{
+    color: #fff;
+    margin-left: 40%;
+}

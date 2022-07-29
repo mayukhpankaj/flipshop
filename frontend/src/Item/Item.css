@@ -76,9 +76,9 @@ a {
 .button {
   font: inherit;
   padding: 0.5rem 2.5rem;
-  border: 1px solid #047BD5;
+  border: 1px solid #F7A200;
   border-radius: 4px;
-  background: #047BD5;
+  background: #F7A200;
   color: white;
   cursor: pointer;
   margin-right: 1rem;
@@ -92,19 +92,19 @@ a {
 
 .button:hover,
 .button:active {
-  background: #047BD5;
-  border-color: #047BD5;
+  background: #F8E831;
+  border-color: #F8E831;
 }
 
 .button--inverse {
   background: transparent;
-  color: #047BD5;
+  color: #F8E831;
 }
 
 .button--inverse:hover,
 .button--inverse:active {
   color: white;
-  background: #047BD5;
+  background: #F8E831;
 }
 
 .button--danger {
@@ -114,8 +114,8 @@ a {
 
 .button--danger:hover,
 .button--danger:active {
-  background: #047BD5;
-  border-color: #047BD5;
+  background: #F8E831;
+  border-color: #F8E831;
 }
 
 .button:disabled,
@@ -139,9 +139,9 @@ a {
   .button {
     font: inherit;
     padding: 0.25rem 1rem;
-    border: 1px solid #047BD5;
+    border: 1px solid #F7A200;
     border-radius: 4px;
-    background: #047BD5;
+    background: #F7A200;
     color: white;
     cursor: pointer;
     margin-right: 0.1rem;
