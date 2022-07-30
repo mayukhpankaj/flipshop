@@ -79,8 +79,7 @@ const createItem = async (req, res, next) => {
     )
   }
 
-  const { title, Metamask_add, description, creator, lPrice, hPrice } = req.body
-
+  const { title, Metamask_add, description, creator, lPrice, hPrice,warranty_period } = req.body
   const createdItem = new Item({
     title,
     description,
@@ -89,6 +88,7 @@ const createItem = async (req, res, next) => {
     lPrice,
     hPrice,
     Metamask_add,
+    warranty_period,
     creator: creator
   })
 

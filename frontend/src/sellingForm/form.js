@@ -42,6 +42,10 @@ const Form = () => {
         value: null,
         isValid: false,
       },
+      warranty_period: {
+        value: null,
+        isValid: false,
+      },
     },
     false
   );
@@ -58,6 +62,7 @@ const Form = () => {
       formData.append("description", formState.inputs.description.value);
       formData.append("image", formState.inputs.image.value);
       formData.append("creator",auth.userId);
+      formData.append("warranty_period",formState.inputs.warranty_period.value);
       await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/items/create`, "POST", formData);
       history.push("/");
     } catch (err) {}
@@ -101,6 +106,15 @@ const Form = () => {
           label=" Product Description"
           validators={[VALIDATOR_MINLENGTH(10)]}
           errorText="Please enter a valid description (at least 10 characters)."
+          onInput={inputHandler}
+        />
+        <Input
+          id="warranty_period"
+          element="input"
+          type="number"
+          label="Warranty period (in months)"
+          validators={[VALIDATOR_INTEGER()]}
+          errorText="Please enter a valid number(an integer)"
           onInput={inputHandler}
         />
         <ImageUpload

@@ -5,15 +5,42 @@ import Checkout from '../Checkout/checkout'
 import ErrorModal from '../Modal/ErrorModal'
 import { useHttpClient } from '../hooks/http-hook'
 import MessageModal from '../Modal/MessageModal'
+import Mint from '../warranty/mint'
 import './itemPage.css'
 
 const Page = props => {
-  const { isLoggedIn,userId } = useContext(AuthContext)
+  console.log(props)
+  const { isLoggedIn, userId } = useContext(AuthContext)
   const [isError, setIsError] = useState(null)
   const [Message, setIsMessage] = useState(null)
   const { sendRequest } = useHttpClient()
   const [itemImage, setItemImage] = useState()
 
+  const warrantyGenerator = async e => {
+    e.preventDefault()
+    if (!window.ethereum) {
+      setIsError('No crypto wallet detected!')
+      return
+    }
+    if (!isLoggedIn) {
+      setIsMessage('Please login first')
+      return
+    }
+    const mintingInfo = {
+      user: userId,
+      prodId: props.items._id,
+      prodName: props.items.title,
+      warrantyPeriod: props.items.warranty_period,
+      imgUrl:`${process.env.REACT_APP_BACKEND_URL}/items/image/${props.items.image}` 
+    }
+    try{
+      Mint(mintingInfo);
+    }
+    catch(err){
+      console.log(err);
+      setIsMessage(err.message)
+    }
+  }
   //Handles Processing of CryptoPayment.
   const checkoutHandler = async e => {
     e.preventDefault()
@@ -88,8 +115,18 @@ const Page = props => {
           </div>
           <p>{props.items.description}</p>
           <p>Seller : {props.creator} </p>
+          {props.items.warranty_period >= 1 && (
+            <p>
+              Warranty period: {props.items.warranty_period}{' '}
+              {(props.items.warranty_period === 1 && 'month') || 'months'}
+            </p>
+          )}
           <button className='cart' type='submit' onClick={checkoutHandler}>
             Buy Now
+          </button>
+          <br/>
+          <button className='cart' type='submit' onClick={warrantyGenerator}>
+            Mint NFT
           </button>
         </div>
       </div>
