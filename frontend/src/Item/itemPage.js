@@ -7,31 +7,49 @@ import { useHttpClient } from '../hooks/http-hook'
 import MessageModal from '../Modal/MessageModal'
 import Mint from '../warranty/mint'
 import './itemPage.css'
+import { useMoralis } from "react-moralis";
+import Moralis from "moralis";
+import Web3 from 'web3';
+const web3 = new Web3(Web3.givenProvider);
+
 
 const Page = props => {
   console.log(props)
+  const { authenticate, isAuthenticated, user } = useMoralis();
   const { isLoggedIn, userId } = useContext(AuthContext)
   const [isError, setIsError] = useState(null)
   const [Message, setIsMessage] = useState(null)
   const { sendRequest } = useHttpClient()
   const [itemImage, setItemImage] = useState()
+  const [doAuth, setDoAuth] = useState(false);
+  const [isMinting, setIsMinting] = useState(false);
 
-  const warrantyGenerator = async e => {
-    e.preventDefault()
-    if (!window.ethereum) {
-      setIsError('No crypto wallet detected!')
+  // useEffect(() => {
+  //   if(isMinting){
+  //     console.log("Minting");
+      
+  //   }
+  // }, [isMinting])
+
+  const warrantyGenerator = async() => {
+    // e.preventDefault()
+    // console.log(userId, props.items.title, props.items._id, props.items.warranty_period);
+    // if (!window.ethereum) {
+    //   setIsError('No crypto wallet detected!')
+    //   return
+    // }
+    if (!isAuthenticated) {
+      authenticate();
       return
     }
-    if (!isLoggedIn) {
-      setIsMessage('Please login first')
-      return
-    }
+    setIsMessage('Warranty will be added soon to your account :)');
     const mintingInfo = {
-      user: userId,
+      // user: userId,
       prodId: props.items._id,
       prodName: props.items.title,
       warrantyPeriod: props.items.warranty_period,
-      imgUrl:`${process.env.REACT_APP_BACKEND_URL}/items/image/${props.items.image}` 
+      imgUrl:`${process.env.REACT_APP_BACKEND_URL}/items/image/${props.items.image}` ,
+      user: user
     }
     try{
       Mint(mintingInfo);
@@ -44,6 +62,7 @@ const Page = props => {
   //Handles Processing of CryptoPayment.
   const checkoutHandler = async e => {
     e.preventDefault()
+    
     if (!window.ethereum) {
       setIsError('No crypto wallet detected!')
       return
@@ -76,7 +95,9 @@ const Page = props => {
           setIsError(err)
         }
       }
-      setIsMessage('Transaction hash: ' + tx.hash)
+      // setIsMessage('Transaction hash: ' + tx.hash)
+      setIsMessage('Please allow transaction to mint your warranty: ');
+      warrantyGenerator();
     } catch (err) {
       setIsMessage(err.message)
     }
@@ -125,9 +146,9 @@ const Page = props => {
             Buy Now
           </button>
           <br/>
-          <button className='cart' type='submit' onClick={warrantyGenerator}>
+          {/* <button className='cart' type='submit' onClick={warrantyGenerator}>
             Mint NFT
-          </button>
+          </button> */}
         </div>
       </div>
     </React.Fragment>
