@@ -23,7 +23,7 @@
     "react-heart": "^1.0.6",
     "react-moralis": "^1.4.0",
     "react-router-dom": "5.3",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "react-transition-group": "^4.4.2",
     "reactstrap": "^9.0.1",
     "semantic-ui-css": "^2.4.1",
@@ -33,9 +33,7 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.2",
     "web3": "^1.6.1",
-    "react-moralis": "^1.4.0",
-    "web3-auth": "^1.1.0",
-    "moralis": "^1.9.0"
+    "web3-auth": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -62,8 +60,8 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.8",
     "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6"
+    "tailwindcss": "^3.1.7"
   }
 }

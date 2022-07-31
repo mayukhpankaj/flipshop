@@ -24,13 +24,6 @@ const Page = props => {
   const [doAuth, setDoAuth] = useState(false);
   const [isMinting, setIsMinting] = useState(false);
 
-  // useEffect(() => {
-  //   if(isMinting){
-  //     console.log("Minting");
-      
-  //   }
-  // }, [isMinting])
-
   const warrantyGenerator = async() => {
     // e.preventDefault()
     // console.log(userId, props.items.title, props.items._id, props.items.warranty_period);
@@ -42,7 +35,7 @@ const Page = props => {
       authenticate();
       return
     }
-    setIsMessage('Warranty will be added soon to your account :)');
+    
     const mintingInfo = {
       // user: userId,
       prodId: props.items._id,
@@ -53,6 +46,7 @@ const Page = props => {
     }
     try{
       Mint(mintingInfo);
+      setIsMessage('Please allow transaction to mint your warranty: ');
     }
     catch(err){
       console.log(err);
@@ -96,7 +90,6 @@ const Page = props => {
         }
       }
       // setIsMessage('Transaction hash: ' + tx.hash)
-      setIsMessage('Please allow transaction to mint your warranty: ');
       warrantyGenerator();
     } catch (err) {
       setIsMessage(err.message)

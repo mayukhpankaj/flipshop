@@ -60,6 +60,11 @@ function Navbar () {
                     </Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
+                    <Link to='/Claim' className='listitem'>
+                      Claim Warranty
+                    </Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
                     <Link to='/sell' className='listitem'>
                       {' '}
                       Sell Item{' '}

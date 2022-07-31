@@ -81,7 +81,9 @@ button:hover{
     border-color: #F7A200;
   }
   #menu {
+    background-color: whitesmoke;
     margin-right: 65px;
+    min-height: 20%;
   }
   
 @media (max-width: 700px) {
@@ -125,7 +127,6 @@ button:hover{
     }
     .Navbar .rightSide .links a{
         margin-left:10px;
-        
         font-size: 10px;
     }
     .Navbar .links button {

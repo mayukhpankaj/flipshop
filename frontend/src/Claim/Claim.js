@@ -3,6 +3,9 @@ import { useMoralis } from 'react-moralis';
 import { useMoralisWeb3Api } from "react-moralis";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Row, Col, Container } from "react-bootstrap";
+import './Claim.css'
+
+import Button from '../FormElements/Button'
 
 function Claim() {
 
@@ -13,17 +16,6 @@ function Claim() {
     const [addr, setAddr] = useState("");
 
     const [mdata, setmdata] = useState([]);
-
-    useEffect(() => {
-
-    if (isAuthenticated) {
-          // add your logic here
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [isAuthenticated]);
-
-
-
 
     const login = async () => {
       if (!isAuthenticated) {
@@ -77,29 +69,33 @@ function Claim() {
 
             // console.log(element.symbol);  
 
-            console.log(element)
+            // console.log(element)
             
             if(element.symbol === "FSNFT"){
 
               console.log(JSON.parse(element.metadata));
 
-              var mdata = JSON.parse(element.metadata);
+              const mdata = JSON.parse(element.metadata);
+              // console.log(1);
 
-              data.push(mdata);
-              
+              const mjson = {...element, ...mdata};
+
+              data.push(mjson);
             }
 
-            setmdata(data);
-        
+            console.log(data.length);
+
+            // console.log(4);
+            // console.log(mdata.length)
       });
 
-
+      setmdata(data);
 
 
     };
    
 
-
+  
 
 
 
@@ -107,30 +103,40 @@ function Claim() {
   return (
     <div>
       <h1>Moralis Hello World!</h1>
-      <button onClick={login}>Moralis Metamask Login</button>
-      <button onClick={logOut} disabled={isAuthenticating}>Logout</button>
+      <button className='btn' onClick={login}>Moralis Metamask Login</button>
+      <button className='btn' onClick={logOut} disabled={isAuthenticating}>Logout</button>
       
       <h2>Your address is {addr}</h2>
 
-      <button onClick={fetchNFTs} > Get NFT data </button>
+      <button className='btn' onClick={fetchNFTs} > Get NFT data </button>
 
       <h2> Your NFT on OPENSTORE </h2>
 
       <Container>
-            <Row>
+            <ul>
                 {mdata.map((metadata, k) => (
-                    <Col key={k} xs={12} md={4} lg={3}>
-                        <Card >
-                            <Card.Img src={metadata.image} />
-
+                    <li key={k} className="card">
+                        <div className="img-div">
+                          <img src={metadata.image} className="img"/>
+                        </div>
+                        <div className='card-body'>
+                          <h5 className='card-title'>{metadata.name}</h5>
+                          <a href={`https://testnets.opensea.io/assets/mumbai/${metadata.token_address}/${metadata.token_id}`} style={{ 'text-decoration': 'none' }}>
+                            <Button onClick={()=>console.log("hello world")}> Claim </Button>
+                          </a>
+                        </div>
+                        {/* <Card border="light" id="cards">
+                            <Card.Img  variant="top"  src={metadata.image} className="img-fluid img"/>
                             <Card.Body>
                                 <Card.Title>{metadata.name}</Card.Title>
-                                {/* <Card.Text>{metadata.description}</Card.Text> */}
+                                <a href={`https://testnets.opensea.io/assets/mumbai/${metadata.token_address}/${metadata.token_id}`} style={{ 'text-decoration': 'none' }}>
+                                 <Button onClick={()=>console.log("hello world")}> Claim </Button>
+                               </a>
                             </Card.Body>
-                        </Card>
-                    </Col>
+                        </Card> */}
+                    </li>
                 ))}
-            </Row>
+            </ul>
         </Container>
      
     </div>
