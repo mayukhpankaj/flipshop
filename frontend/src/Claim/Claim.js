@@ -102,11 +102,10 @@ function Claim() {
 
   return (
     <div>
-      <h1>Moralis Hello World!</h1>
-      <button className='btn' onClick={login}>Moralis Metamask Login</button>
-      <button className='btn' onClick={logOut} disabled={isAuthenticating}>Logout</button>
+      {/* <button className='btn' onClick={login}>Moralis Metamask Login</button>
+      <button className='btn' onClick={logOut} disabled={isAuthenticating}>Logout</button> */}
       
-      <h2>Your address is {addr}</h2>
+      {/* <h2>Your address is {addr}</h2> */}
 
       <button className='btn' onClick={fetchNFTs} > Get NFT data </button>
 

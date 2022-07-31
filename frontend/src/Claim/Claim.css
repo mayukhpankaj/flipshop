@@ -29,10 +29,12 @@
 }
 
 .img-div .img{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    margin: auto;
+    border-radius: 5px;
+    align-self: center;
+    max-width: 300px;
+    max-height: 200px;
+    z-index: 1;
+    margin-left: 2vw;
 }
 
 .btn{
