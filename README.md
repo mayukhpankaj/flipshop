@@ -1,9 +1,12 @@
 # flipshop
 A decentralised E-commerce platform with NFT based warranty
 
-[demo- video](https://www.youtube.com/watch?v=UqyTMuUQdnE)
 
-### Currently, the validity of the warranty is determined by some physical receipt or warranty card. This poses several issues:
+[demo- video](https://www.youtube.com/watch?v=UqyTMuUQdnE), developed for Flipkart Grid 4.0 Hackathon 
+
+## Problem Statement
+
+#### Currently, the validity of the warranty is determined by some physical receipt or warranty card. This poses several issues:
 
 - The warranty document is easily falsifiable.
 - The warranty document is not necessarily standard among different sellers.
