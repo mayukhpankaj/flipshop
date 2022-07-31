@@ -24,4 +24,34 @@ A bad acting authorized dealer could issue warranty cards for expired products "
 
 - Warranty can be claimed for the listed NFT on claim page , If the warranty period has not expired. for example, difference in Purchase Date  -  Current Date < Warranty period
 
+##  Architecture
+**![](https://lh5.googleusercontent.com/uyGT0soTOP8RxN25twXJYy8XOtlaUryEeywdVGXW47FKB6hbKx4ll4w3NM4hh15W0DLFB8b-pxVpkChmWGQVh9IbQoI-9g3a_1Du6gs6Vi5g5q40VK1uAb-8UevHYEdgUofkhq5elO7Hyc1rvSi19wWMXQ)**
+
 <img src="https://lh5.googleusercontent.com/7nC-rd4PCfVdFOWhu9sqcZFSiy55EHuqwaBuyHG-LdV8K93QVxPbDkqp001llwxCWsTc5VdlXWdC7qw9moIHuq0wUqpRqPWMB0XVONNigXp5t94YMJ7NNLkHmbZ30-jOoo4_Jbr8WCzhBkNlGTbJ9w" height="500px "> 
+
+
+## Techstack 
+
+- Frontend
+	- ReactJS
+	- React Bootstrap
+- Backend 
+	-  NodeJS
+	-  Netlify
+	- Mongo DB
+- Blockchain
+	-  IPFS
+	- Moralis
+	- Solidity
+	- Polygon Chain
+  
+ 
+ ![techstack](https://user-images.githubusercontent.com/40158577/182040993-90ec45d7-3a66-482c-8e3f-55635ac6202d.png)
+
+ 
+ 
+ 
+ 
+
+
+	
