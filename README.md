@@ -23,3 +23,4 @@ A bad acting authorized dealer could issue warranty cards for expired products "
 -   For Claiming Warranty, we list all the NFT in user’s wallet which were minted with our Contract address , for example if Token symbol === “FSNFT”
     
 - Warranty can be claimed for the listed NFT on claim page , If the warranty period has not expired. for example, difference in Purchase Date  -  Current Date < Warranty period
+**![](https://lh5.googleusercontent.com/7nC-rd4PCfVdFOWhu9sqcZFSiy55EHuqwaBuyHG-LdV8K93QVxPbDkqp001llwxCWsTc5VdlXWdC7qw9moIHuq0wUqpRqPWMB0XVONNigXp5t94YMJ7NNLkHmbZ30-jOoo4_Jbr8WCzhBkNlGTbJ9w)**
