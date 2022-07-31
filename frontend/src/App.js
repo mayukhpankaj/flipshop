@@ -16,6 +16,9 @@ import { AuthContext } from './context/auth'
 // import Wishlist from "./wishlist/wishlistData";
 // import ItemPage from "./Item/itemId";
 // import Checkout from "./Checkout/checkout";
+import MetamskLogo from './icons/metamask.png'
+import PinataLogo from './icons/pinata1.png'
+import IpfsLogo from './icons/ipfs.png'
 
 const Wishlist = React.lazy(() => import('./wishlist/wishlistData'))
 const ItemPage = React.lazy(() => import('./Item/itemId'))
@@ -101,6 +104,22 @@ function App () {
             </Switch>
           </main>
         </Router>
+        <footer className='footer'>
+          <div>
+            <h3>Flipshop &copy;2022</h3>
+          </div>
+          <div className='footer-icons'>
+            <a href='#'>
+              <img src={MetamskLogo} alt="" width={40} height={40}/>
+            </a>
+            <a href='#'>
+              <img src={PinataLogo} alt="" width={40} height={40}/>
+            </a>
+            <a href='#'>
+              <img src={IpfsLogo} alt="" width={40} height={40}/>
+            </a>
+          </div>
+        </footer>
       </AuthContext.Provider>
     </React.Fragment>
   )
