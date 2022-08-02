@@ -6,7 +6,7 @@ A decentralised E-commerce platform with NFT based warranty
 
 ## Problem Statement
 
-#### Currently, the validity of the warranty is determined by some physical receipt or warranty card. This poses several issues:
+##### Currently, the validity of the warranty is determined by some physical receipt or warranty card. This poses several issues:
 
 - The warranty document is easily falsifiable.
 - The warranty document is not necessarily standard among different sellers.
